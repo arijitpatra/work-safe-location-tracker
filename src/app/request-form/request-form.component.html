@@ -1,0 +1,49 @@
+<div class="row mgn-0 min-h-100vh">
+  <div class="col-xs-12 mgn-t-25">
+    <h3>Fill in details</h3>
+  </div>
+  <form>
+    <div class="col-xs-12 mgn-t-25">
+      <span>DATE</span>
+      <input class="form-control" type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="col-xs-6 mgn-t-25">
+      <span>TIME-IN</span>
+      <input class="form-control" type="time" [(ngModel)]="timeIn" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="col-xs-6 mgn-t-25">
+      <span>TIME-OUT</span>
+      <input class="form-control" type="time" [(ngModel)]="timeOut" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <span>WORKING FROM</span>
+      <select class="form-control" [(ngModel)]="selectedCubicleId" [ngModelOptions]="{standalone: true}" required>
+        <option value="{{cubicleId}}">My Cubicle</option>
+        <option value="Common Area 1">Common Area 1</option>
+        <option value="Common Area 2">Common Area 2</option>
+        <option value="Common Area 3">Common Area 3</option>
+        <option value="Common Area 4">Common Area 4</option>
+      </select>
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <span>REASON</span>
+      <input class="form-control" type="string"  [(ngModel)]="reason" [ngModelOptions]="{standalone: true}" required maxlength="100">
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <span>APPROVER ID</span>
+      <input class="form-control" type="email" disabled value="{{approverId}}">
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <b>I give consent to track my realtime position inside campus on this day.</b>
+    </div>
+    <div *ngIf="invalidEntry" class="col-xs-12 mgn-t-25">
+      <span class="rejected">please fill all the fields</span>
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <button class="btn btn-success m-b-15" type="submit" (click)="requestSubmit()">
+        REQUEST
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </button>
+    </div>
+  </form>
+</div>

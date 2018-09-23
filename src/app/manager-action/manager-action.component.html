@@ -1,0 +1,27 @@
+<div class="row mgn-0 bg min-h-100vh">
+  <div class="col-xs-12 m-b-15">
+    <h3>Action Center - {{count}} Items</h3>
+  </div>
+  <div class="col-xs-12 cardBase flex" *ngFor="let req of reqList; let i = index" id="{{i}}">
+    <div class="col-xs-12">
+      <h4>{{req.data.name}}</h4>
+      <div class="col-xs-4 m-l-n15">
+        <span><b class="fs-12">Date</b> {{req.data.date | date:'shortDate'}}</span>
+      </div>
+      <div class="col-xs-4">
+        <span><b class="fs-12">Time-In</b> {{req.data.inTime}}</span>
+      </div>
+      <div class="col-xs-4">
+        <span><b class="fs-12">Time-Out</b> {{req.data.outTime}}</span>
+      </div>
+      <div class="col-xs-6 bg-green rounded-action-btn flex flex-center" (click)="actionTaken('approve',req.id, i)">
+        <span>Approve</span>
+        <i class="fa fa-check-circle mgn-l-10" aria-hidden="true"></i>
+      </div>
+      <div class="col-xs-6 bg-red rounded-action-btn pull-right flex flex-center" (click)="actionTaken('reject',req.id, i)">
+        <span>Reject</span>
+        <i class="fa fa-times-circle mgn-l-10" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>

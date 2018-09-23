@@ -1,0 +1,17 @@
+@import '../../styles.scss';
+
+.bg {
+    background: $color-offwhite;
+    padding: 25px 15px;
+}
+
+.card-content {
+    @extend .cardBase;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+i {
+    float: right;
+}

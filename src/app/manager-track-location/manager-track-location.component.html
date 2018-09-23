@@ -1,0 +1,20 @@
+<div class="row mgn-0 bg min-h-100vh">
+  <div class="col-xs-12 m-b-15">
+    <h3>Track Employee</h3>
+  </div>
+  <div class="col-xs-12" *ngIf="!loadedEmployees">
+    Loading...<i class="fa fa-spinner"></i>
+  </div>
+  <div *ngIf="loadedEmployees">
+    <div class="col-xs-12 cardBase flex flex-center" *ngFor="let employee of approvedEmployees">
+      <div class="col-xs-9">
+        <h4>{{employee.empId}}</h4>
+      </div>
+      <div class="col-xs-3">
+        <button class="btn btn-success" (click)="viewMap(employee)">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

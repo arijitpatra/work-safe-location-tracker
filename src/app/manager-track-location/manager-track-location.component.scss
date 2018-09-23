@@ -1,0 +1,23 @@
+@import '../../styles.scss';
+
+.bg {
+    background: $color-offwhite;
+    padding: 25px 15px;
+}
+
+i {
+    color: $color-white;
+    font-size: 18px;
+}
+
+.rounded-action-btn {
+    padding: 7px;
+    border-radius: 50px;
+    margin-top: 10px;
+    color: white;
+    width: 49%;
+}
+
+.fa-spinner {
+    color: #555;
+}

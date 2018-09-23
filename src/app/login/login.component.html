@@ -1,0 +1,24 @@
+<div class="row mgn-0 login-center min-h-100vh">
+  <div class="col-xs-12">
+    <h3>Work Safe App</h3>
+  </div>
+  <form>
+    <div class="col-xs-12 mgn-t-25">
+      <span>EMPLOYEE ID</span>
+      <input class="form-control" [(ngModel)]="empId" name="username" type="text" required>
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <span>PASSWORD</span>
+      <input class="form-control" [(ngModel)]="password" name="password" type="password" required>
+    </div>
+    <div class="col-xs-12 mgn-t-25">
+      <button class="btn btn-success" type="submit" (click)="logIn()">
+        LOGIN
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </button>
+    </div>
+  </form>
+  <div *ngIf="credentialsMismatch" class="col-xs-12 mgn-t-25">
+    <span class="rejected">username or password mismatch</span>
+  </div>
+</div>
